@@ -1,0 +1,11 @@
+{
+    "name": "data-flow-run-sequence-function",
+    "version": "1.0.0",
+    "description": "An IBM Cloud Function to run one data flow after another.",
+    "author": "Damian Cummins",
+    "license": "MIT",
+    "main": "index.js",
+    "dependencies": {
+        "restler": "^3.4.0"
+    }
+}
