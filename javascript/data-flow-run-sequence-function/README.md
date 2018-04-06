@@ -1,6 +1,6 @@
 # Serverless Data Flow Sequencing with Watson Data API and IBM Cloud Functions
 
-![IBM Cloud Function Logs](https://github.ibm.com/DCummin3/data-flow-run-sequence-function/blob/master/images/IBMCloudFunctionLogs.JPG)
+![IBM Cloud Function Logs](https://github.com/WatsonDataFlows/samples/blob/master/javascript/data-flow-run-sequence-function/images/IBMCloudFunctionLogs.JPG)
 
 In a [previous tutorial](https://medium.com/ibm-watson/using-shell-scripts-to-control-data-flows-created-in-watson-applications-f7de2e265f1f), you saw how data flows could be run one after another by polling using a simple shell script. This tutorial demonstrates how to deploy the same functionality as a serverless action. IBM Cloud Functions enable you to deploy a simple, repeatable function and run it periodically by using the `alarm` package.
 
