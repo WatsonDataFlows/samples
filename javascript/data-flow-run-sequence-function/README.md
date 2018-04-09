@@ -19,7 +19,7 @@ const dataFlowId2 = 'd31116c7-854f-404c-9e7a-de274a8bb2d6'; // Data Flow Ref to 
 
 The `main` function is the one that will be called each time the action is invoked. The function creates a new authentication token, retrieves the latest run for `dataFlowId1`, and then either creates a new `dataFlowId2` run or simply returns, depending on the `state` and `completed_date`.
 
-We've configured the function to run every 20 seconds so we will *only* start a new run for `dataFlowId2` if the run completed in the last 20 seconds. This is to avoid starting `dataFlowId2` every time we retrieve the latest finished run for `dataFlowId1`.
+We've configured the function to run every 20 seconds so we will *only* start a new run for `dataFlowId2` if the latest run for `dataFlow1` completed in the last 20 seconds. This is to avoid starting `dataFlowId2` every time we retrieve the latest finished run for `dataFlowId1`.
 
 ```javascript
 // Main function
@@ -83,7 +83,7 @@ First, follow the instructions [here](https://console.bluemix.net/openwhisk/lear
 In a terminal window, upload the .zip file containing the node.js action as a Cloud Function by using the following command:
 `bx wsk action create packageAction --kind nodejs:default action.zip`
 
-To manually invoke the action, use the following command:
+You can test the action you have just created manually by using the following command:
 `bx wsk action invoke --blocking --result packageAction`
 
 ## Trigger: every-20-seconds
@@ -200,4 +200,7 @@ Activation: 'every-20-seconds' (4443d803d6a44d6883d803d6a46d6817)
 
 ```
 In this entry, you can see that the run for the data flow with an ID of `37bd30f0-dd3f-4052-988d-69c8fb2bf40a` finished so the data flow with an ID of `d31116c7-854f-404c-9e7a-de274a8bb2d6` starts.
+
+To Summarize…
+In summary, we have created a serverless action that polls the status of a data flow’s most recent run and, on completion, runs another data flow. This demonstrates the ability to chain or sequence the running of data flows using Watson Data APIs in the IBM Cloud.
 
